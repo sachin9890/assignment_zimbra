@@ -20,7 +20,7 @@ const ProductDetails = () => {
       .then((response) => {
         setProductDetails(response[0]);
       });
-  }, []);
+  }, [categoryId, category, name]);
 
   return (
     <Row>
@@ -28,7 +28,7 @@ const ProductDetails = () => {
         <Card className="customCard">
           <Row>
             <Col sm="4">
-                <img width="100%" src={productDetails.imageUrl} alt="Card image cap" />
+                <img width="100%" src={productDetails.imageUrl} alt={productDetails.name}/>
             </Col>
             <Col sm="8">
                 <div><h2>{category}</h2></div>
